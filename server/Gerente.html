@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerente | CrediFacil</title>
+  <link rel="stylesheet" href="Styles/stylesGerente.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="logo">CrediFacil</div>
+    <div class="user-info">
+      <span class="user-role">Gerente</span>
+      <button id="user-btn" class="user-btn">
+        <i class="fas fa-user-circle"></i>
+        <span id="user-name"></span>
+      </button>
+    </div>
+    <div id="user-profile" class="user-dropdown">
+      <div class="profile-header">
+        <i class="fas fa-user-circle"></i>
+        <div>
+          <h4 id="profile-name"></h4>
+          <p>Gerente</p>
+        </div>
+      </div>
+      <div class="profile-actions">
+        <button class="logout-btn" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar Simplificado -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h3>Menú Principal</h3>
+    </div>
+    <ul>
+      <li class="active">
+        <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      </li>
+      <li>
+        <a href="#prestamos"><i class="fas fa-hand-holding-usd"></i> Préstamos</a>
+      </li>
+      <li>
+        <a href="#pagos-incumplidos"><i class="fas fa-exclamation-circle"></i> Pagos Incumplidos</a>
+      </li>
+      <li>
+        <a href="#reportes"><i class="fas fa-file-alt"></i> Reportes</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="dashboard-stats">
+      <h2>Resumen General</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-hand-holding-usd"></i>
+          </div>
+          <div class="stat-info">
+            <h3 id="total-prestamos">$0</h3>
+            <p>Préstamos Activos</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-money-bill-wave"></i>
+          </div>
+          <div class="stat-info">
+            <h3 id="ingresos-mes">$0</h3>
+            <p>Ingresos este mes</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="stat-info">
+            <h3 id="morosidad">0%</h3>
+            <p>Tasa de morosidad</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <div class="stat-info">
+            <h3 id="clientes-activos">0</h3>
+            <p>Clientes Activos</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-sections">
+      <div class="dashboard-column">
+        <div class="dashboard-card" id="prestamos">
+          <div class="card-header">
+            <h3><i class="fas fa-hand-holding-usd"></i> Préstamos Recientes</h3>
+          </div>
+          <div class="card-content">
+            <div class="search-bar">
+              <input type="text" placeholder="Buscar préstamo..." id="loan-search">
+              <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="table-responsive">
+              <table class="loans-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Monto</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="loans-list">
+                  <!-- Los préstamos se cargarán dinámicamente -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dashboard-column">
+        <div class="dashboard-card" id="pagos-incumplidos">
+          <div class="card-header">
+            <h3><i class="fas fa-exclamation-circle"></i> Pagos Incumplidos</h3>
+          </div>
+          <div class="card-content" id="late-payments-container">
+            <!-- Los pagos incumplidos se cargarán dinámicamente -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-sections">
+      <div class="dashboard-column">
+        <div class="dashboard-card" id="reportes">
+          <div class="card-header">
+            <h3><i class="fas fa-file-alt"></i> Generar Reporte</h3>
+          </div>
+          <div class="card-content">
+            <form id="report-form">
+              <div class="form-group">
+                <label for="report-type">Tipo de Reporte</label>
+                <select id="report-type" class="form-control">
+                  <option value="ingresos">Ingresos</option>
+                  <option value="prestamos">Préstamos</option>
+                  <option value="clientes">Clientes</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="date-range">Rango de Fechas</label>
+                <div class="date-range">
+                  <input type="date" id="start-date" class="form-control">
+                  <span>a</span>
+                  <input type="date" id="end-date" class="form-control">
+                </div>
+              </div>
+              <button type="submit" class="btn-generate">
+                <i class="fas fa-file-export"></i> Generar Reporte
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal de Detalles de Préstamo -->
+  <div id="loan-details-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3><i class="fas fa-hand-holding-usd"></i> Detalles del Préstamo</h3>
+      <div class="loan-details">
+        <div class="loan-info">
+          <div class="info-group">
+            <label>ID del Préstamo:</label>
+            <p id="loan-id"></p>
+          </div>
+          <div class="info-group">
+            <label>Cliente:</label>
+            <p id="loan-client"></p>
+          </div>
+          <div class="info-group">
+            <label>Monto:</label>
+            <p id="loan-amount"></p>
+          </div>
+          <div class="info-group">
+            <label>Tasa de interés:</label>
+            <p id="loan-rate"></p>
+          </div>
+          <div class="info-group">
+            <label>Plazo:</label>
+            <p id="loan-term"></p>
+          </div>
+          <div class="info-group">
+            <label>Fecha de inicio:</label>
+            <p id="loan-start"></p>
+          </div>
+          <div class="info-group">
+            <label>Estado:</label>
+            <p id="loan-status"></p>
+          </div>
+        </div>
+        
+        <div class="payment-schedule">
+          <h4><i class="fas fa-calendar-alt"></i> Historial de Pagos</h4>
+          <div class="table-responsive">
+            <table class="payments-table">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Monto</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody id="payments-list">
+                <!-- Los pagos se cargarán dinámicamente -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-action print-btn" onclick="window.print()">
+          <i class="fas fa-print"></i> Imprimir
+        </button>
+        <button class="btn-action close-btn">
+          <i class="fas fa-times"></i> Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="Java/panelGerente.js"></script>
+</body>
+</html>

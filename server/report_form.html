@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporte | CrediFacil</title>
+  <link rel="stylesheet" href="../Styles/stylesGerente.css">
+  <style>
+    .report-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: white;
+    }
+    .report-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #3a4f7a;
+      padding-bottom: 1rem;
+    }
+    .report-title {
+      color: #3a4f7a;
+      margin-bottom: 0.5rem;
+    }
+    .report-date {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .report-content {
+      margin-top: 2rem;
+    }
+    .print-btn {
+      display: block;
+      margin: 2rem auto;
+      padding: 0.8rem 2rem;
+      background: #3a4f7a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    @media print {
+      .print-btn {
+        display: none;
+      }
+      body {
+        background: white !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="report-container">
+    <div class="report-header">
+      <h1 class="report-title" id="report-title">Título del Reporte</h1>
+      <div class="report-date" id="report-date">Fecha del reporte</div>
+    </div>
+    
+    <div class="report-content" id="report-content">
+      <!-- Contenido del reporte se insertará aquí -->
+    </div>
+    
+    <button class="print-btn" onclick="window.print()">
+      <i class="fas fa-print"></i> Imprimir Reporte
+    </button>
+  </div>
+
+  <script>
+    // Cargar datos del reporte desde la URL
+    document.addEventListener('DOMContentLoaded', function() {
+      const params = new URLSearchParams(window.location.search);
+      const type = params.get('type');
+      const startDate = params.get('start');
+      const endDate = params.get('end');
+      
+      // Configurar título y fecha
+      document.getElementById('report-title').textContent = `Reporte de ${getReportTypeName(type)}`;
+      document.getElementById('report-date').textContent = `Del ${formatDate(startDate)} al ${formatDate(endDate)}`;
+      
+      // Generar contenido del reporte
+      generateReportContent(type, startDate, endDate);
+    });
+
+    function getReportTypeName(type) {
+      const types = {
+        'ingresos': 'Ingresos',
+        'prestamos': 'Préstamos',
+        'clientes': 'Clientes'
+      };
+      return types[type] || type;
+    }
+
+    function formatDate(dateString) {
+      if (!dateString) return 'N/A';
+      const date = new Date(dateString);
+      return date.toLocaleDateString('es-ES');
+    }
+
+    async function generateReportContent(type, startDate, endDate) {
+      try {
+        const response = await fetch(`Php/generate_report.php?type=${type}&start=${startDate}&end=${endDate}`);
+        const data = await response.json();
+        
+        if (data.success) {
+          document.getElementById('report-content').innerHTML = data.html;
+        } else {
+          document.getElementById('report-content').innerHTML = `
+            <div class="error-message">
+              <p>Error al generar el reporte: ${data.message}</p>
+            </div>
+          `;
+        }
+      } catch (error) {
+        document.getElementById('report-content').innerHTML = `
+          <div class="error-message">
+            <p>Error de conexión: ${error.message}</p>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

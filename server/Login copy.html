@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="Styles/stylesLogin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <img src="Img/LogoG.png" alt="Login Illustration" class="login-image" />
+    </div>
+
+    <div class="right-panel">
+      <button class="go-back" onclick="window.history.back();">← Go back</button>
+      <h2>Welcome!</h2>
+      <p>Please login to your account.</p>
+      
+      <form class="login-form" id="loginForm">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email" required />
+
+        <label>Password</label>
+        <div class="password-wrapper">
+          <input type="password" name="password" placeholder="Enter your password" required />
+        </div>
+
+        <a href="#" class="forgot-password">Forgot Password?</a>
+        <button type="submit" class="login-btn">Login</button>
+
+        <div id="error-message" class="error-message" style="display: none;"></div>
+      </form>
+
+      <p class="signup">Don't have an account? <a href="Signup.html">Sign up</a></p>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="Java/login.js"></script>
+</body>
+</html>

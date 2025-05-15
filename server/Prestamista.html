@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Prestamista | CrediFacil</title>
+  <link rel="stylesheet" href="Styles/styles.css">
+  <script defer src="Java/scripts.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="logo">CrediFacil</div>
+    <div class="user-info">
+      <span class="user-role" id="user-role-display">Prestamista</span>
+      <button id="user-btn" class="user-btn">
+        <i class="fas fa-user-circle"></i>
+        <span id="user-name">Cargando...</span>
+      </button>
+    </div>
+    <div id="user-profile" class="user-dropdown">
+      <div class="profile-header">
+        <i class="fas fa-user-circle"></i>
+        <div>
+          <h4 id="profile-name">Cargando...</h4>
+          <p id="profile-role">Prestamista</p>
+        </div>
+      </div>
+      <div class="profile-actions">
+        <a href="#"><i class="fas fa-user-cog"></i> Configuración</a>
+        <a href="#"><i class="fas fa-question-circle"></i> Ayuda</a>
+        <button class="logout-btn" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h3>Menú Prestamista</h3>
+    </div>
+    <ul>
+      <li class="active">
+        <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      </li>
+      <li>
+        <a href="#"><i class="fas fa-file-alt"></i> Solicitudes <span class="badge">0</span></a>
+      </li>
+      <li>
+        <a href="#"><i class="fas fa-hand-holding-usd"></i> Préstamos Activos <span class="badge">0</span></a>
+      </li>
+      <li>
+        <a href="#"><i class="fas fa-users"></i> Clientes</a>
+      </li>
+      <li>
+        <a href="#"><i class="fas fa-chart-line"></i> Reportes</a>
+      </li>
+      <li>
+        <a href="#"><i class="fas fa-cog"></i> Configuración</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <section class="dashboard-stats">
+      <h2>Resumen Financiero</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-file-invoice-dollar"></i>
+          </div>
+          <div class="stat-info">
+            <h3>0</h3>
+            <p>Préstamos activos</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <div class="stat-info">
+            <h3>0</h3>
+            <p>Pagos hoy</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="stat-info">
+            <h3>0</h3>
+            <p>Morosidad</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-user-plus"></i>
+          </div>
+          <div class="stat-info">
+            <h3>0</h3>
+            <p>Nuevas solicitudes</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-sections">
+      <div class="dashboard-column">
+        <div class="dashboard-card">
+          <div class="card-header">
+            <h3><i class="fas fa-clock"></i> Próximos vencimientos</h3>
+            <a href="#" class="see-all">Ver todos</a>
+          </div>
+          <div class="card-content">
+            <div class="no-results">Cargando próximos vencimientos...</div>
+          </div>
+        </div>
+        
+        <div class="dashboard-card">
+          <div class="card-header">
+            <h3><i class="fas fa-file-signature"></i> Solicitudes recientes</h3>
+            <a href="#" class="see-all">Ver todas</a>
+          </div>
+          <div class="card-content">
+            <div class="no-results">Cargando solicitudes recientes...</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dashboard-column">
+        <div class="dashboard-card">
+          <div class="card-header">
+            <h3><i class="fas fa-chart-pie"></i> Distribución de cartera</h3>
+          </div>
+          <div class="card-content">
+            <div class="chart-placeholder"></div>
+          </div>
+        </div>
+        
+        <div class="dashboard-card quick-actions">
+          <div class="card-header">
+            <h3><i class="fas fa-bolt"></i> Acciones rápidas</h3>
+          </div>
+          <div class="card-content">
+            <button class="quick-action-btn" id="nuevo-prestamo">
+              <i class="fas fa-plus-circle"></i>
+              <span>Nuevo préstamo</span>
+            </button>
+            <button class="quick-action-btn" id="registrar-pago">
+              <i class="fas fa-hand-holding-usd"></i>
+              <span>Registrar pago</span>
+            </button>
+            <button class="quick-action-btn" id="agregar-cliente">
+              <i class="fas fa-user-plus"></i>
+              <span>Agregar cliente</span>
+            </button>
+            <button class="quick-action-btn" id="generar-reporte">
+              <i class="fas fa-file-export"></i>
+              <span>Generar reporte</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">CrediFacil</div>
+      <div class="footer-links">
+        <a href="#"><i class="fas fa-shield-alt"></i> Seguridad</a>
+        <a href="#"><i class="fas fa-question-circle"></i> Ayuda</a>
+        <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2025 CrediFacil. Sistema de préstamos personales.</p>
+    </div>
+  </footer>
+</body>
+</html>

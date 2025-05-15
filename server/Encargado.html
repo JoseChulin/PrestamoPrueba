@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encargado de Personal | CrediFacil</title>
+  <link rel="stylesheet" href="Styles/stylesPersonal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="logo">CrediFacil</div>
+    <div class="user-info">
+      <span class="user-role" id="user-role-display">Cargando...</span>
+      <button id="user-btn" class="user-btn">
+        <i class="fas fa-user-circle"></i>
+        <span id="user-name">Cargando...</span>
+      </button>
+    </div>
+    <div id="user-profile" class="user-dropdown">
+      <div class="profile-header">
+        <i class="fas fa-user-circle"></i>
+        <div>
+          <h4 id="profile-name">Cargando...</h4>
+          <p id="profile-role">Cargando...</p>
+        </div>
+      </div>
+      <div class="profile-actions">
+        <a href="Index.html"><i class="fas fa-user-cog"></i> Cerrar sesion</a>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h3>Menú Principal</h3>
+    </div>
+    <ul>
+      <li class="active">
+        <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      </li>
+      <li>
+        <a href="#gestion-empleados"><i class="fas fa-users"></i> Gestión de Empleados</a>
+      </li>
+      <li>
+        <a href="#reportes"><i class="fas fa-chart-bar"></i> Reportes</a>
+      </li>
+      <li>
+        <a href="#configuracion"><i class="fas fa-cog"></i> Configuración</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="dashboard-stats">
+      <h2>Resumen General</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="stat-info">
+            <h3 id="total-empleados">0</h3>
+            <p>Empleados Activos</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-user-plus"></i>
+          </div>
+          <div class="stat-info">
+            <h3 id="nuevos-empleados">0</h3>
+            <p>Nuevos este mes</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-sections">
+      <div class="dashboard-column full-width">
+        <div class="dashboard-card" id="gestion-empleados">
+          <div class="card-header">
+            <h3><i class="fas fa-user-edit"></i> Gestión de Empleados</h3>
+            <a href="AltaEmpleado.html" class="btn-add">
+              <i class="fas fa-plus"></i> Agregar
+            </a>
+          </div>
+          <div class="card-content">
+            <div class="search-bar">
+              <input type="text" placeholder="Buscar por ID..." id="employee-search">
+              <button id="search-btn"><i class="fas fa-search"></i> Buscar</button>
+            </div>
+            <div class="table-responsive">
+              <table class="employees-table">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Puesto</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="employees-list">
+                  <!-- Datos dinámicos desde JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Datos del empleado buscado -->
+  <div id="employee-profile-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3><i class="fas fa-user"></i> Perfil del Empleado</h3>
+        <div class="profile-details">
+            <div class="profile-info">
+                <div class="info-group">
+                    <label>ID Empleado:</label>
+                    <p id="profile-id">-</p>
+                </div>
+                <div class="info-group">
+                    <label>Nombre Completo:</label>
+                    <p id="profile-fullname">-</p>
+                </div>
+                <div class="info-group">
+                    <label>Puesto:</label>
+                    <p id="profile-position">-</p>
+                </div>
+                <div class="info-group">
+                    <label>Correo:</label>
+                    <p id="profile-email">-</p>
+                </div>
+                <div class="info-group">
+                    <label>Teléfono:</label>
+                    <p id="profile-phone">-</p>
+                </div>
+                <div class="info-group">
+                    <label>Fecha de Ingreso:</label>
+                    <p id="profile-date">-</p>
+                </div>
+                <div class="info-group">
+                    <label>Estado:</label>
+                    <p id="profile-status"><span class="status-badge active">Activo</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <script src="Java/panelPersonal.js"></script>
+</body>
+</html>
