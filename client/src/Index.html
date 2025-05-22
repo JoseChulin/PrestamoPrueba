@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CrediFacil - Inicio</title>
+  <link rel="stylesheet" href="Styles/IndexStyles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header>
+  <div class="logo-container">
+    <div class="logo">
+      <img src="Img/LogoG2.png" alt="Logo" class="logo-img">
+    </div>
+  </div>
+  <button class="login-btn" onclick="window.location.href='Login.html'">
+    <i class="fas fa-user-circle"></i>
+  </button>
+</header>
+
+<!-- Carrusel de beneficios -->
+<section class="carousel-section">
+  <h2 class="section-title">Beneficios de Nuestros Préstamos</h2>
+  <div class="carousel-wrapper">
+    <button class="carousel-nav prev" onclick="moveCarousel(-1, 'main-carousel')">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    
+    <div class="carousel-container">
+      <div class="carousel" id="main-carousel">
+        <div class="carousel-item">
+          <i class="fas fa-percentage"></i>
+          <h3>Beneficios</h3>
+          <p>Las mejores tasas de interés del mercado</p>
+        </div>
+        <div class="carousel-item">
+          <i class="fas fa-clock"></i>
+          <h3>Promociones</h3>
+          <p>Aprobación en menos de 24 horas</p>
+        </div>
+        <div class="carousel-item">
+          <i class="fas fa-file-alt"></i>
+          <h3>Pasos para solicitar</h3>
+          <p>Solo necesitas tu identificación y comprobante de ingresos</p>
+        </div>
+      </div>
+    </div>
+    
+    <button class="carousel-nav next" onclick="moveCarousel(1, 'main-carousel')">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</section>
+
+<!-- Sección de tasas de interés -->
+<section class="interes">
+  <h2 class="section-title">Nuestras Tasas de Interés</h2>
+  <div class="grafico-container">
+    <div class="grafico">
+      <div class="bar" style="height: 70%; background-color: #3498db;">
+        <span class="bar-value">12%</span>
+        <span class="bar-label">Personal</span>
+      </div>
+      <div class="bar" style="height: 50%; background-color: #2ecc71;">
+        <span class="bar-value">8%</span>
+        <span class="bar-label">Automóvil</span>
+      </div>
+      <div class="bar" style="height: 40%; background-color: #e74c3c;">
+        <span class="bar-value">6%</span>
+        <span class="bar-label">Hipotecario</span>
+      </div>
+    </div>
+    <div class="grafico-info">
+      <p>Compara nuestras tasas con otros proveedores y descubre por qué somos la mejor opción</p>
+      <button class="btn-cta" onclick="window.location.href='Login.html'">Solicitar Préstamo</button>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de testimonios -->
+<section class="testimonios-section">
+  <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+  
+  <div class="testimonios-container">
+    <button class="carousel-nav testimonio prev">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    
+    <div class="testimonios-carousel"></div>
+    
+    <button class="carousel-nav testimonio next">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    
+    <div class="carousel-indicators"></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="Img/LogoG2.png" alt="Logo" class="logo-img">
+    </div>
+    <div class="footer-columns">
+      <div>
+        <h4>Servicios</h4>
+        <ul>
+          <li>Préstamos personales</li>
+          <li>Préstamos automotrices</li>
+          <li>Préstamos hipotecarios</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Compañía</h4>
+        <ul>
+          <li>Sobre nosotros</li>
+          <li>Términos y condiciones</li>
+          <li>Política de privacidad</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+          <li><i class="fas fa-envelope"></i> info@credifacil.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> Av. Principal #123</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2023 CrediFacil. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="Java/ScriptIndex.js"></script>
+</body>
+</html>

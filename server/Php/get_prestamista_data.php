@@ -3,7 +3,7 @@ require_once 'conexion.php';
 
 session_start();
 
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+if (!isset($_SESSION['logged_in'])) {
     http_response_code(401);
     exit(json_encode(['success' => false, 'message' => 'No autorizado']));
 }
@@ -11,10 +11,10 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 try {
     $db = Db::conectar();
     
-    $query = "SELECT e.idEmpleado, e.nombreEmpleado, te.nombrePuesto, l.correo as email 
+    // Obtener datos del prestamista actual
+    $query = "SELECT e.idEmpleado, e.nombreEmpleado as name, te.nombrePuesto as position 
               FROM empleado e
               JOIN tipoempleado te ON e.idTipoEmpleado = te.idTipo
-              JOIN loginempleados l ON e.idEmpleado = l.idEmpleado
               WHERE e.idEmpleado = :id";
     
     $stmt = $db->prepare($query);
@@ -27,12 +27,7 @@ try {
         header('Content-Type: application/json');
         echo json_encode([
             'success' => true,
-            'data' => [
-                'id' => $prestamista['idEmpleado'],
-                'name' => $prestamista['nombreEmpleado'],
-                'position' => $prestamista['nombrePuesto'],
-                'email' => $prestamista['email']
-            ]
+            'data' => $prestamista
         ]);
     } else {
         echo json_encode(['success' => false, 'message' => 'Prestamista no encontrado']);

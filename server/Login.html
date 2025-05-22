@@ -14,7 +14,6 @@
     </div>
 
     <div class="right-panel">
-      <button class="go-back" onclick="window.history.back();">← Go back</button>
       <h2>Welcome!</h2>
       <p>Please login to your account.</p>
       
@@ -24,10 +23,10 @@
 
         <label>Password</label>
         <div class="password-wrapper">
-          <input type="password" name="password" placeholder="Enter your password" required />
+          <input type="password" name="password" id="password" placeholder="Enter your password" required />
+          <i class="fas fa-eye" id="togglePassword"></i>
         </div>
 
-        <a href="#" class="forgot-password">Forgot Password?</a>
         <button type="submit" class="login-btn">Login</button>
 
         <div id="error-message" class="error-message" style="display: none;"></div>

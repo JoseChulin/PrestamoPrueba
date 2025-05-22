@@ -10,7 +10,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || $_SESSI
 try {
     $db = Db::conectar();
     
-    // Usando vista directamente
+    // con una vista en la base de datos
     $query = "SELECT * FROM vista_estadisticas_dashboard";
     $stmt = $db->query($query);
     $stats = $stmt->fetch(PDO::FETCH_ASSOC);

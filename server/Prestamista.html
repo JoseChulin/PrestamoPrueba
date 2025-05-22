@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-  
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard Prestamista | CrediFacil</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Prestamista | CrediFacil</title>
   <link rel="stylesheet" href="Styles/styles.css">
-  <script defer src="Java/scripts.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -16,7 +14,7 @@
     </div>
     <div class="logo">CrediFacil</div>
     <div class="user-info">
-      <span class="user-role" id="user-role-display">Prestamista</span>
+      <span class="user-role">Prestamista</span>
       <button id="user-btn" class="user-btn">
         <i class="fas fa-user-circle"></i>
         <span id="user-name">Cargando...</span>
@@ -27,12 +25,10 @@
         <i class="fas fa-user-circle"></i>
         <div>
           <h4 id="profile-name">Cargando...</h4>
-          <p id="profile-role">Prestamista</p>
+          <p>Prestamista</p>
         </div>
       </div>
       <div class="profile-actions">
-        <a href="#"><i class="fas fa-user-cog"></i> Configuración</a>
-        <a href="#"><i class="fas fa-question-circle"></i> Ayuda</a>
         <button class="logout-btn" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
       </div>
     </div>
@@ -44,36 +40,28 @@
     </div>
     <ul>
       <li class="active">
-        <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="#resumen"><i class="fas fa-tachometer-alt"></i> Resumen</a>
       </li>
       <li>
-        <a href="#"><i class="fas fa-file-alt"></i> Solicitudes <span class="badge">0</span></a>
+        <a href="#solicitudes"><i class="fas fa-file-alt"></i> Solicitudes <span class="badge" id="badge-solicitudes">0</span></a>
       </li>
       <li>
-        <a href="#"><i class="fas fa-hand-holding-usd"></i> Préstamos Activos <span class="badge">0</span></a>
-      </li>
-      <li>
-        <a href="#"><i class="fas fa-users"></i> Clientes</a>
-      </li>
-      <li>
-        <a href="#"><i class="fas fa-chart-line"></i> Reportes</a>
-      </li>
-      <li>
-        <a href="#"><i class="fas fa-cog"></i> Configuración</a>
+        <a href="#dudas"><i class="fas fa-question-circle"></i> Dudas <span class="badge" id="badge-dudas">0</span></a>
       </li>
     </ul>
   </nav>
 
   <main class="main-content">
-    <section class="dashboard-stats">
-      <h2>Resumen Financiero</h2>
+    <!-- Sección Resumen Financiero -->
+    <section id="resumen" class="dashboard-section">
+      <h2><i class="fas fa-chart-pie"></i> Resumen Financiero</h2>
       <div class="stats-grid">
         <div class="stat-card">
           <div class="stat-icon">
-            <i class="fas fa-file-invoice-dollar"></i>
+            <i class="fas fa-hand-holding-usd"></i>
           </div>
           <div class="stat-info">
-            <h3>0</h3>
+            <h3 id="prestamos-activos">0</h3>
             <p>Préstamos activos</p>
           </div>
         </div>
@@ -82,7 +70,7 @@
             <i class="fas fa-calendar-check"></i>
           </div>
           <div class="stat-info">
-            <h3>0</h3>
+            <h3 id="pagos-hoy">0</h3>
             <p>Pagos hoy</p>
           </div>
         </div>
@@ -91,94 +79,116 @@
             <i class="fas fa-exclamation-triangle"></i>
           </div>
           <div class="stat-info">
-            <h3>0</h3>
-            <p>Morosidad</p>
-          </div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">
-            <i class="fas fa-user-plus"></i>
-          </div>
-          <div class="stat-info">
-            <h3>0</h3>
-            <p>Nuevas solicitudes</p>
+            <h3 id="morosidad">0</h3>
+            <p>En mora</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="dashboard-sections">
-      <div class="dashboard-column">
-        <div class="dashboard-card">
-          <div class="card-header">
-            <h3><i class="fas fa-clock"></i> Próximos vencimientos</h3>
-            <a href="#" class="see-all">Ver todos</a>
-          </div>
-          <div class="card-content">
-            <div class="no-results">Cargando próximos vencimientos...</div>
-          </div>
-        </div>
-        
-        <div class="dashboard-card">
-          <div class="card-header">
-            <h3><i class="fas fa-file-signature"></i> Solicitudes recientes</h3>
-            <a href="#" class="see-all">Ver todas</a>
-          </div>
-          <div class="card-content">
-            <div class="no-results">Cargando solicitudes recientes...</div>
-          </div>
-        </div>
+<section id="prestamos" class="dashboard-section">
+  <div class="section-header with-actions">
+    <div>
+      <h2><i class="fas fa-file-invoice-dollar"></i> Mis Préstamos</h2>
+      <p class="section-subtitle">Resumen de todos los préstamos asignados</p>
+    </div>
+    <div class="actions">
+      <button class="btn btn-refresh" id="refresh-prestamos">
+        <i class="fas fa-sync-alt"></i> Actualizar
+      </button>
+    </div>
+  </div>
+  
+  <div class="card table-card">
+    <div class="table-responsive" id="prestamos-container">
+      <!-- La tabla se cargará aquí dinámicamente -->
+    </div>
+    <div class="table-footer">
+      <div class="table-info" id="prestamos-info"></div>
+      <div class="pagination" id="pagination-controls">
+        <!-- Controles de paginación -->
       </div>
-      
-      <div class="dashboard-column">
-        <div class="dashboard-card">
-          <div class="card-header">
-            <h3><i class="fas fa-chart-pie"></i> Distribución de cartera</h3>
-          </div>
-          <div class="card-content">
-            <div class="chart-placeholder"></div>
-          </div>
-        </div>
-        
-        <div class="dashboard-card quick-actions">
-          <div class="card-header">
-            <h3><i class="fas fa-bolt"></i> Acciones rápidas</h3>
-          </div>
-          <div class="card-content">
-            <button class="quick-action-btn" id="nuevo-prestamo">
-              <i class="fas fa-plus-circle"></i>
-              <span>Nuevo préstamo</span>
-            </button>
-            <button class="quick-action-btn" id="registrar-pago">
-              <i class="fas fa-hand-holding-usd"></i>
-              <span>Registrar pago</span>
-            </button>
-            <button class="quick-action-btn" id="agregar-cliente">
-              <i class="fas fa-user-plus"></i>
-              <span>Agregar cliente</span>
-            </button>
-            <button class="quick-action-btn" id="generar-reporte">
-              <i class="fas fa-file-export"></i>
-              <span>Generar reporte</span>
-            </button>
-          </div>
-        </div>
+    </div>
+  </div>
+</section>
+  
+  <div class="card table-card">
+    <div class="table-responsive" id="prestamos-container">
+      <!-- La tabla se cargará aquí dinámicamente -->
+    </div>
+    <div class="table-footer">
+      <div class="table-info" id="prestamos-info"></div>
+      <div class="pagination" id="pagination-controls">
+        <!-- Controles de paginación -->
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal para detalles del préstamo -->
+<div id="prestamo-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div id="prestamo-modal-content"></div>
+  </div>
+</div>
+
+    <!-- Sección Solicitudes en Revisión -->
+    <section id="solicitudes" class="dashboard-section" style="display:none;">
+      <div class="section-header">
+        <h2><i class="fas fa-file-alt"></i> Solicitudes en Revisión</h2>
+      </div>
+      <div class="table-container">
+        <table id="solicitudes-table">
+          <thead>
+            <tr>
+              <th>Solicitante</th>
+              <th>Monto</th>
+              <th>Fecha</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="solicitudes-body">
+            <!-- Los datos se cargarán con JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Sección Dudas de Clientes -->
+    <section id="dudas" class="dashboard-section" style="display:none;">
+      <div class="section-header">
+        <h2><i class="fas fa-question-circle"></i> Dudas de Clientes</h2>
+      </div>
+      <div class="dudas-container" id="dudas-list">
+        <!-- Las dudas se cargarán con JavaScript -->
+      </div>
+      <button id="ver-historial-dudas" class="btn btn-historial">
+          <i class="fas fa-history"></i> Ver Historial de Dudas
+      </button>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-logo">CrediFacil</div>
-      <div class="footer-links">
-        <a href="#"><i class="fas fa-shield-alt"></i> Seguridad</a>
-        <a href="#"><i class="fas fa-question-circle"></i> Ayuda</a>
-        <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+  <!-- Modal para responder dudas -->
+  <div id="responder-duda-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3><i class="fas fa-reply"></i> Responder Duda</h3>
+      <div class="duda-content" id="duda-content">
+        <!-- Contenido de la duda -->
       </div>
+<form id="respuesta-form">
+    <input type="hidden" id="duda-id" name="duda-id">
+    <div class="form-group">
+        <label for="respuesta">Tu respuesta:</label>
+        <textarea id="respuesta" name="respuesta" rows="4" required></textarea>
     </div>
-    <div class="footer-copyright">
-      <p>&copy; 2025 CrediFacil. Sistema de préstamos personales.</p>
+    
+    <button type="submit" class="btn-enviar">Enviar Respuesta</button>
+</form>
     </div>
-  </footer>
+  </div>
+  
+  <script src="Java/scripts.js"></script>
 </body>
 </html>

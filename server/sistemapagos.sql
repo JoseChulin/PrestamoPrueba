@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-05-2025 a las 03:13:27
+-- Tiempo de generación: 16-05-2025 a las 04:40:30
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -29,7 +29,6 @@ USE `sistemapagos`;
 -- Estructura de tabla para la tabla `calendariopagos`
 --
 
-DROP TABLE IF EXISTS `calendariopagos`;
 CREATE TABLE `calendariopagos` (
   `idPago` int(11) NOT NULL,
   `idPrestamo` int(11) NOT NULL,
@@ -51,7 +50,41 @@ INSERT INTO `calendariopagos` (`idPago`, `idPrestamo`, `numeroCouta`, `fechaVenc
 (2, 1, 2, '2025-07-01', 0, 916.67, 0.00, 10, '2025-05-01'),
 (3, 1, 3, '2025-08-01', 0, 916.67, 0.00, 10, '2025-05-01'),
 (4, 2, 1, '2025-06-05', 1, 2250.00, 2250.00, 8, '2025-05-05'),
-(5, 2, 2, '2025-07-05', 0, 2250.00, 0.00, 8, '2025-05-05');
+(5, 2, 2, '2025-07-05', 0, 2250.00, 0.00, 8, '2025-05-05'),
+(6, 5, 1, '2025-03-25', 1, 2416.67, 2416.67, 8, '2025-02-25'),
+(7, 5, 2, '2025-04-25', 0, 2416.67, 0.00, 8, '2025-02-25'),
+(8, 6, 1, '2025-04-15', 1, 3055.56, 3055.56, 6, '2025-03-15'),
+(9, 6, 2, '2025-05-15', 0, 3055.56, 0.00, 6, '2025-03-15'),
+(10, 7, 1, '2025-05-10', 1, 1083.33, 1083.33, 15, '2025-04-10'),
+(11, 8, 1, '2025-06-18', 1, 1375.00, 1375.00, 10, '2025-05-18'),
+(12, 8, 2, '2025-07-18', 0, 1375.00, 0.00, 10, '2025-05-18'),
+(13, 9, 1, '2025-07-22', 1, 2583.33, 2583.33, 8, '2025-06-22'),
+(14, 10, 1, '2025-08-30', 1, 3333.33, 3333.33, 6, '2025-07-30'),
+(15, 11, 1, '2025-09-05', 1, 1358.33, 1358.33, 15, '2025-08-05'),
+(16, 6, 1, '2025-05-22', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(17, 6, 2, '2025-05-29', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(18, 6, 3, '2025-06-05', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(19, 6, 4, '2025-06-12', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(20, 6, 5, '2025-06-19', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(21, 6, 6, '2025-06-26', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(22, 6, 7, '2025-07-03', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(23, 6, 8, '2025-07-10', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(24, 6, 9, '2025-07-17', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(25, 6, 10, '2025-07-24', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(26, 6, 11, '2025-07-31', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(27, 6, 12, '2025-08-07', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(28, 6, 13, '2025-08-14', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(29, 6, 14, '2025-08-21', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(30, 6, 15, '2025-08-28', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(31, 6, 16, '2025-09-04', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(32, 6, 17, '2025-09-11', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(33, 6, 18, '2025-09-18', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(34, 6, 19, '2025-09-25', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(35, 6, 20, '2025-10-02', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(36, 6, 21, '2025-10-09', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(37, 6, 22, '2025-10-16', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(38, 6, 23, '2025-10-23', 0, 2291.67, 0.00, 8, '2025-05-15'),
+(39, 6, 24, '2025-10-30', 0, 2291.67, 0.00, 8, '2025-05-15');
 
 -- --------------------------------------------------------
 
@@ -59,7 +92,6 @@ INSERT INTO `calendariopagos` (`idPago`, `idPrestamo`, `numeroCouta`, `fechaVenc
 -- Estructura de tabla para la tabla `cuentabancaria`
 --
 
-DROP TABLE IF EXISTS `cuentabancaria`;
 CREATE TABLE `cuentabancaria` (
   `idCuenta` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL,
@@ -75,7 +107,17 @@ CREATE TABLE `cuentabancaria` (
 INSERT INTO `cuentabancaria` (`idCuenta`, `idUsuario`, `banco`, `numeroCuenta`, `fechaRegistro`) VALUES
 (1, 1, 'BBVA', '1234567890123456', '2025-05-01 10:00:00'),
 (2, 2, 'Santander', '6543210987654321', '2025-05-05 11:30:00'),
-(3, 3, 'Banamex', '9876543210123456', '2025-05-10 09:15:00');
+(3, 3, 'Banamex', '9876543210123456', '2025-05-10 09:15:00'),
+(4, 4, 'BBVA', '1111222233334444', '2025-01-15 10:00:00'),
+(5, 5, 'Santander', '2222333344445555', '2025-02-20 11:30:00'),
+(6, 6, 'Banamex', '3333444455556666', '2025-03-10 09:15:00'),
+(7, 7, 'HSBC', '4444555566667777', '2025-04-05 14:20:00'),
+(8, 8, 'ScotiaBank', '5555666677778888', '2025-05-12 16:45:00'),
+(9, 9, 'Banorte', '6666777788889999', '2025-06-18 13:10:00'),
+(10, 10, 'Banregio', '7777888899990000', '2025-07-22 15:30:00'),
+(11, 11, 'Inbursa', '8888999900001111', '2025-08-30 12:00:00'),
+(12, 12, 'Afirme', '9999000011112222', '2025-09-14 10:45:00'),
+(13, 13, 'BanBajío', '0000111122223333', '2025-10-25 11:15:00');
 
 -- --------------------------------------------------------
 
@@ -83,7 +125,6 @@ INSERT INTO `cuentabancaria` (`idCuenta`, `idUsuario`, `banco`, `numeroCuenta`, 
 -- Estructura de tabla para la tabla `documentos`
 --
 
-DROP TABLE IF EXISTS `documentos`;
 CREATE TABLE `documentos` (
   `idDocumento` int(11) NOT NULL,
   `idPrestamo` int(11) NOT NULL,
@@ -108,7 +149,6 @@ INSERT INTO `documentos` (`idDocumento`, `idPrestamo`, `idTipoDocumento`, `Docum
 -- Estructura de tabla para la tabla `empleado`
 --
 
-DROP TABLE IF EXISTS `empleado`;
 CREATE TABLE `empleado` (
   `idEmpleado` int(11) NOT NULL,
   `idTipoEmpleado` int(11) NOT NULL,
@@ -134,7 +174,6 @@ INSERT INTO `empleado` (`idEmpleado`, `idTipoEmpleado`, `nombreEmpleado`, `telef
 -- Estructura de tabla para la tabla `loginempleados`
 --
 
-DROP TABLE IF EXISTS `loginempleados`;
 CREATE TABLE `loginempleados` (
   `idLoginEmpleado` int(11) NOT NULL,
   `idEmpleado` int(11) NOT NULL,
@@ -158,7 +197,6 @@ INSERT INTO `loginempleados` (`idLoginEmpleado`, `idEmpleado`, `correo`, `contra
 -- Estructura de tabla para la tabla `loginusuarios`
 --
 
-DROP TABLE IF EXISTS `loginusuarios`;
 CREATE TABLE `loginusuarios` (
   `idLoginUsuario` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL,
@@ -174,7 +212,17 @@ CREATE TABLE `loginusuarios` (
 INSERT INTO `loginusuarios` (`idLoginUsuario`, `idUsuario`, `nombreUsuario`, `correo`, `contraseña`) VALUES
 (1, 1, 'juan123', 'juan@example.com', 'Moca115@'),
 (2, 2, 'maria456', 'maria@example.com', 'Moca115@'),
-(3, 3, 'carlos789', 'carlos@example.com', 'Moca115@');
+(3, 3, 'carlos789', 'carlos@example.com', 'Moca115@'),
+(4, 4, 'ana101', 'ana@example.com', 'Moca115@'),
+(5, 5, 'luis202', 'luis@example.com', 'Moca115@'),
+(6, 6, 'sofia303', 'sofia@example.com', 'Moca115@'),
+(7, 7, 'pedro404', 'pedro2@example.com', 'Moca115@'),
+(8, 8, 'laura505', 'laura@example.com', 'Moca115@'),
+(9, 9, 'jorge606', 'jorge@example.com', 'Moca115@'),
+(10, 10, 'marta707', 'marta@example.com', 'Moca115@'),
+(11, 11, 'david808', 'david@example.com', 'Moca115@'),
+(12, 12, 'elena909', 'elena@example.com', 'Moca115@'),
+(13, 13, 'pablo010', 'pablo@example.com', 'Moca115@');
 
 -- --------------------------------------------------------
 
@@ -182,12 +230,11 @@ INSERT INTO `loginusuarios` (`idLoginUsuario`, `idUsuario`, `nombreUsuario`, `co
 -- Estructura de tabla para la tabla `notificaciones`
 --
 
-DROP TABLE IF EXISTS `notificaciones`;
 CREATE TABLE `notificaciones` (
   `idNotificacion` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL,
   `idEmpleado` int(11) NOT NULL,
-  `mensaje` varchar(100) NOT NULL,
+  `mensaje` varchar(200) NOT NULL,
   `idTipoNotificacion` int(11) NOT NULL,
   `estado` int(11) NOT NULL,
   `fechaEnvio` datetime DEFAULT current_timestamp()
@@ -201,7 +248,14 @@ INSERT INTO `notificaciones` (`idNotificacion`, `idUsuario`, `idEmpleado`, `mens
 (1, 1, 2, 'Su préstamo ha sido aprobado', 1, 1, '2025-05-01 12:00:00'),
 (2, 2, 2, 'Su préstamo ha sido aprobado', 1, 1, '2025-05-05 13:30:00'),
 (3, 3, 2, 'Su préstamo está en revisión', 6, 1, '2025-05-10 10:15:00'),
-(4, 1, 2, 'Recordatorio: Pago vence el 01/06/2025', 3, 0, '2025-05-25 09:00:00');
+(4, 1, 2, 'Recordatorio: Pago vence el 01/06/2025', 3, 0, '2025-05-25 09:00:00'),
+(5, 4, 2, 'Disculpe no se como mandar mis documentos', 7, 1, '2025-05-15 12:22:33'),
+(6, 10, 2, 'Su préstamo ha sido aprobado', 1, 1, '2025-05-15 14:17:04'),
+(7, 3, 2, 'Su préstamo ha sido rechazado', 2, 1, '2025-05-15 14:29:36'),
+(8, 5, 2, 'Su préstamo ha sido aprobado. Se han generado las fechas de pago.', 1, 1, '2025-05-15 15:53:37'),
+(9, 4, 2, 'Respuesta a tu duda del 2025-05-15 12:22:33:\r\nTienes que ir al apartado de documentos en la sección de solicitud de prestamos...', 8, 0, '2025-05-15 20:25:10'),
+(10, 11, 2, 'En que formato tienen que estar los documentos?', 7, 1, '2025-05-15 20:43:21'),
+(11, 11, 2, 'Respuesta a tu duda del 2025-05-15 20:43:21:\nEn pdf', 8, 0, '2025-05-15 20:44:52');
 
 -- --------------------------------------------------------
 
@@ -209,7 +263,6 @@ INSERT INTO `notificaciones` (`idNotificacion`, `idUsuario`, `idEmpleado`, `mens
 -- Estructura de tabla para la tabla `pagos`
 --
 
-DROP TABLE IF EXISTS `pagos`;
 CREATE TABLE `pagos` (
   `idTransaccion` int(11) NOT NULL,
   `idPago` int(11) NOT NULL,
@@ -233,7 +286,6 @@ INSERT INTO `pagos` (`idTransaccion`, `idPago`, `montoPago`, `fechaPago`, `refer
 -- Estructura de tabla para la tabla `penalizaciones`
 --
 
-DROP TABLE IF EXISTS `penalizaciones`;
 CREATE TABLE `penalizaciones` (
   `idPenalizacion` int(11) NOT NULL,
   `idPago` int(11) NOT NULL,
@@ -255,7 +307,6 @@ INSERT INTO `penalizaciones` (`idPenalizacion`, `idPago`, `tasaInteres`, `descri
 -- Estructura de tabla para la tabla `planesprestamos`
 --
 
-DROP TABLE IF EXISTS `planesprestamos`;
 CREATE TABLE `planesprestamos` (
   `idPlan` int(11) NOT NULL,
   `nombrePlan` varchar(20) NOT NULL,
@@ -282,7 +333,6 @@ INSERT INTO `planesprestamos` (`idPlan`, `nombrePlan`, `tasaInteres`, `duracion`
 -- Estructura de tabla para la tabla `prestamos`
 --
 
-DROP TABLE IF EXISTS `prestamos`;
 CREATE TABLE `prestamos` (
   `idPrestamo` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL,
@@ -300,10 +350,20 @@ CREATE TABLE `prestamos` (
 --
 
 INSERT INTO `prestamos` (`idPrestamo`, `idUsuario`, `idPlan`, `idEmpleado`, `tasaInteres`, `plazoMeses`, `montoSolicitado`, `estado`, `fechaSolicitud`) VALUES
-(1, 1, 1, 2, 10, 12, 10000.00, 1, '2025-05-01'),
+(1, 1, 1, 2, 10, 12, 10000.00, 2, '2025-05-01'),
 (2, 2, 2, 2, 8, 24, 50000.00, 1, '2025-05-05'),
-(3, 3, 3, 2, 6, 36, 100000.00, 2, '2025-05-10'),
-(4, 1, 4, 2, 15, 6, 5000.00, 3, '2025-05-12');
+(3, 3, 3, 2, 6, 36, 100000.00, 3, '2025-05-10'),
+(4, 1, 4, 2, 15, 6, 5000.00, 2, '2025-05-12'),
+(5, 4, 1, 2, 10, 12, 12000.00, 1, '2025-01-20'),
+(6, 5, 2, 2, 8, 24, 55000.00, 1, '2025-02-25'),
+(7, 6, 3, 2, 6, 36, 110000.00, 2, '2025-03-15'),
+(8, 7, 4, 2, 15, 6, 6000.00, 3, '2025-04-10'),
+(9, 8, 1, 2, 10, 12, 15000.00, 1, '2025-04-18'),
+(10, 9, 2, 2, 8, 24, 60000.00, 1, '2025-04-22'),
+(11, 10, 3, 2, 6, 36, 120000.00, 2, '2025-07-30'),
+(12, 11, 4, 2, 15, 6, 7000.00, 3, '2025-04-05'),
+(13, 12, 1, 2, 10, 12, 18000.00, 1, '2025-03-20'),
+(14, 13, 2, 2, 8, 24, 65000.00, 1, '2025-04-30');
 
 -- --------------------------------------------------------
 
@@ -311,7 +371,6 @@ INSERT INTO `prestamos` (`idPrestamo`, `idUsuario`, `idPlan`, `idEmpleado`, `tas
 -- Estructura de tabla para la tabla `tipodocumento`
 --
 
-DROP TABLE IF EXISTS `tipodocumento`;
 CREATE TABLE `tipodocumento` (
   `idTipoDocumento` int(11) NOT NULL,
   `descripcion` varchar(30) NOT NULL
@@ -334,7 +393,6 @@ INSERT INTO `tipodocumento` (`idTipoDocumento`, `descripcion`) VALUES
 -- Estructura de tabla para la tabla `tipoempleado`
 --
 
-DROP TABLE IF EXISTS `tipoempleado`;
 CREATE TABLE `tipoempleado` (
   `idTipo` int(11) NOT NULL,
   `nombrePuesto` varchar(20) NOT NULL,
@@ -358,7 +416,6 @@ INSERT INTO `tipoempleado` (`idTipo`, `nombrePuesto`, `descripcion`, `salarioBas
 -- Estructura de tabla para la tabla `tiposnotificacion`
 --
 
-DROP TABLE IF EXISTS `tiposnotificacion`;
 CREATE TABLE `tiposnotificacion` (
   `idTipoNotificacion` int(11) NOT NULL,
   `descripcion` varchar(30) NOT NULL
@@ -374,7 +431,9 @@ INSERT INTO `tiposnotificacion` (`idTipoNotificacion`, `descripcion`) VALUES
 (3, 'Recordatorio de Pago'),
 (4, 'Pago Atrasado'),
 (5, 'Pago Recibido'),
-(6, 'Cambio de Estado');
+(6, 'Cambio de Estado'),
+(7, 'Dudas'),
+(8, 'Respuesta');
 
 -- --------------------------------------------------------
 
@@ -382,7 +441,6 @@ INSERT INTO `tiposnotificacion` (`idTipoNotificacion`, `descripcion`) VALUES
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `idUsuario` int(11) NOT NULL,
   `nombreCliente` varchar(30) NOT NULL,
@@ -402,7 +460,17 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`idUsuario`, `nombreCliente`, `nombreUsuario`, `correo`, `contraseña`, `apellidoM`, `apellidoP`, `telefono`, `fechaRegistro`) VALUES
 (1, 'Juan', 'juan123', 'juan@example.com', 'Moca115@', 'Pérez', 'Gómez', '5551234567', '2025-05-01'),
 (2, 'María', 'maria456', 'maria@example.com', 'Moca115@', 'López', 'Martínez', '5557654321', '2025-05-05'),
-(3, 'Carlos', 'carlos789', 'carlos@example.com', 'Moca115@', 'García', 'Rodríguez', '5559876543', '2025-05-10');
+(3, 'Carlos', 'carlos789', 'carlos@example.com', 'Moca115@', 'García', 'Rodríguez', '5559876543', '2025-05-10'),
+(4, 'Ana', 'ana101', 'ana@example.com', 'Moca115@', 'Sánchez', 'López', '5552345678', '2025-01-15'),
+(5, 'Luis', 'luis202', 'luis@example.com', 'Moca115@', 'Gómez', 'Fernández', '5553456789', '2025-02-20'),
+(6, 'Sofía', 'sofia303', 'sofia@example.com', 'Moca115@', 'Díaz', 'Martínez', '5554567890', '2025-03-10'),
+(7, 'Pedro', 'pedro404', 'pedro2@example.com', 'Moca115@', 'Hernández', 'García', '5555678901', '2025-04-05'),
+(8, 'Laura', 'laura505', 'laura@example.com', 'Moca115@', 'Rodríguez', 'Pérez', '5556789012', '2025-05-12'),
+(9, 'Jorge', 'jorge606', 'jorge@example.com', 'Moca115@', 'Martín', 'Sánchez', '5557890123', '2025-06-18'),
+(10, 'Marta', 'marta707', 'marta@example.com', 'Moca115@', 'Jiménez', 'López', '5558901234', '2025-07-22'),
+(11, 'David', 'david808', 'david@example.com', 'Moca115@', 'Ruiz', 'Gómez', '5559012345', '2025-08-30'),
+(12, 'Elena', 'elena909', 'elena@example.com', 'Moca115@', 'Serrano', 'Fernández', '5550123456', '2025-09-14'),
+(13, 'Pablo', 'pablo010', 'pablo@example.com', 'Moca115@', 'Torres', 'Díaz', '5551234501', '2025-10-25');
 
 -- --------------------------------------------------------
 
@@ -410,7 +478,6 @@ INSERT INTO `usuarios` (`idUsuario`, `nombreCliente`, `nombreUsuario`, `correo`,
 -- Estructura Stand-in para la vista `vista_empleado_actual`
 -- (Véase abajo para la vista actual)
 --
-DROP VIEW IF EXISTS `vista_empleado_actual`;
 CREATE TABLE `vista_empleado_actual` (
 `idEmpleado` int(11)
 ,`idTipoEmpleado` int(11)
@@ -427,7 +494,6 @@ CREATE TABLE `vista_empleado_actual` (
 -- Estructura Stand-in para la vista `vista_estadisticas_dashboard`
 -- (Véase abajo para la vista actual)
 --
-DROP VIEW IF EXISTS `vista_estadisticas_dashboard`;
 CREATE TABLE `vista_estadisticas_dashboard` (
 `total_empleados` bigint(21)
 ,`quejas_pendientes` bigint(21)
@@ -441,7 +507,6 @@ CREATE TABLE `vista_estadisticas_dashboard` (
 -- Estructura de tabla para la tabla `voucherpago`
 --
 
-DROP TABLE IF EXISTS `voucherpago`;
 CREATE TABLE `voucherpago` (
   `idVoucher` int(11) NOT NULL,
   `idPago` int(11) NOT NULL,
@@ -464,7 +529,6 @@ INSERT INTO `voucherpago` (`idVoucher`, `idPago`, `urlDocumento`, `fechaRegistro
 --
 DROP TABLE IF EXISTS `vista_empleado_actual`;
 
-DROP VIEW IF EXISTS `vista_empleado_actual`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_empleado_actual`  AS SELECT `e`.`idEmpleado` AS `idEmpleado`, `e`.`idTipoEmpleado` AS `idTipoEmpleado`, `e`.`nombreEmpleado` AS `nombreEmpleado`, `e`.`telefono` AS `telefono`, `e`.`correo` AS `correo`, `e`.`fechaRegistro` AS `fechaRegistro`, `te`.`nombrePuesto` AS `nombrePuesto` FROM (`empleado` `e` join `tipoempleado` `te` on(`e`.`idTipoEmpleado` = `te`.`idTipo`)) ;
 
 -- --------------------------------------------------------
@@ -474,7 +538,6 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `vista_estadisticas_dashboard`;
 
-DROP VIEW IF EXISTS `vista_estadisticas_dashboard`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_estadisticas_dashboard`  AS SELECT (select count(0) from `empleado`) AS `total_empleados`, (select count(0) from `notificaciones` where `notificaciones`.`idTipoNotificacion` = 6 and `notificaciones`.`estado` = 0) AS `quejas_pendientes`, (select count(0) from `empleado` where month(`empleado`.`fechaRegistro`) = month(curdate())) AS `nuevos_empleados`, 12 AS `evaluaciones_pendientes` ;
 
 --
@@ -598,6 +661,12 @@ ALTER TABLE `voucherpago`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `calendariopagos`
+--
+ALTER TABLE `calendariopagos`
+  MODIFY `idPago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
 -- AUTO_INCREMENT de la tabla `documentos`
 --
 ALTER TABLE `documentos`
@@ -607,7 +676,7 @@ ALTER TABLE `documentos`
 -- AUTO_INCREMENT de la tabla `notificaciones`
 --
 ALTER TABLE `notificaciones`
-  MODIFY `idNotificacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idNotificacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas

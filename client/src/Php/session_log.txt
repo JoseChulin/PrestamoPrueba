@@ -1,0 +1,183 @@
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)
+Array
+(
+    [idUsuario] => 14
+    [logged_in] => 1
+    [user_name] => Jose Alexander
+    [user_email] => Cliente@gmail.com
+    [user_phone] => 9831231231
+    [username] => JoseM
+)

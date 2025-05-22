@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Usuario</title>
+  <link rel="stylesheet" href="Styles/stylesPanel.css">
+  
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo-sidebar">
+        <img src="Img/LogoG2.png" alt="Logo">
+      </div>
+      <div class="menu-item active" data-section="dashboard">
+        <i class="fas fa-home"></i>
+        <span>Dashboard</span>
+      </div>
+      <div class="menu-item" data-section="loan">
+        <i class="fas fa-hand-holding-usd"></i>
+        <span>Préstamos</span>
+      </div>
+      <div class="menu-item" data-section="cards">
+        <i class="fas fa-credit-card"></i>
+        <span>Tarjetas</span>
+      </div>
+      <div class="menu-item" data-section="profile">
+        <i class="fas fa-user"></i>
+        <span>Perfil</span>
+      </div>
+    </aside>
+    
+    <main class="main-content" id="main-content">
+      <header class="header">
+        <div class="user-menu">
+          <div class="user-info" id="userDropdown">
+            <div class="user-avatar" id="userAvatar">U</div>
+            <span id="usernameDisplay">Usuario</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="dropdown-content" id="dropdownContent">
+            <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+          </div>
+        </div>
+      </header>
+      
+      <section class="repayment">
+        <div>
+          <p>Próxima Fecha de Pago</p>
+          <h2 id="nextPaymentDate">Cargando...</h2>
+          <p id="bankName">---</p>
+        </div>
+        <div class="repayment-amount">
+          <h2 id="paymentAmount">$0.00</h2>
+          <button class="payment-btn">Realizar Pago</button>
+        </div>
+      </section>
+      
+      <section class="bottom-section">
+        <div class="history">
+          <h2>Historial</h2>
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="monthly">Mensual</button>
+            <button class="filter-btn" data-filter="weekly">Semanal</button>
+          </div>
+          <div class="table-container">
+            <table id="historyTable">
+              <thead>
+                <tr>
+                  <th>Descripción</th>
+                  <th>Fecha</th>
+                  <th>Monto/Referencia</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="4" class="no-data">Cargando historial...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="cards">
+          <div class="card-header">
+            <h2>Cuenta Bancaria</h2>
+            <button class="add-card-btn"><i class="fas fa-plus"></i> Cuenta</button>
+          </div>
+          <div class="card-display">
+            <div class="card">
+              <div class="card-logo">
+                <i class="fab fa-cc-visa"></i>
+              </div>
+              <p class="number" id="cardNumber">**** **** **** ****</p>
+              <div class="card-footer">
+                <div>
+                  <p class="name-label">Titular</p>
+                  <p class="name" id="cardName">CARGANDO...</p>
+                </div>
+                <div>
+                  <p class="expiry-label">Válido hasta</p>
+                  <p class="expiry" id="cardExpiry">MM/AA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal de cierre de sesión -->
+  <div class="modal" id="logoutModal">
+    <div class="modal-content">
+      <h3>¿Estás seguro que deseas cerrar sesión?</h3>
+      <div class="modal-buttons">
+        <button class="cancel-btn">Cancelar</button>
+        <button class="confirm-btn">Cerrar Sesión</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para modificar cuenta bancaria -->
+<div class="modal" id="bankAccountModal">
+  <div class="modal-content">
+    <h3>Modificar Cuenta Bancaria</h3>
+    <form id="bankAccountForm">
+      <div class="form-group">
+        <label for="editBankName">Banco</label>
+        <select id="editBankName" name="bankName" required>
+          <option value="">Seleccione un banco</option>
+          <option value="BBVA">BBVA</option>
+          <option value="Santander">Santander</option>
+          <option value="Banamex">Banamex</option>
+          <option value="HSBC">HSBC</option>
+          <option value="Banorte">Banorte</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="editAccountNumber">Número de Cuenta</label>
+        <input type="text" id="editAccountNumber" name="accountNumber" 
+               pattern="[0-9]{16,20}" title="Ingrese 16-20 dígitos" required>
+      </div>
+      <div class="modal-buttons">
+        <button type="button" class="cancel-btn">Cancelar</button>
+        <button type="submit" class="confirm-btn">Guardar Cambios</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+  <!-- Spinner de carga -->
+  <div id="loading-spinner">
+    <div class="loading-spinner"></div>
+    <p>Cargando datos...</p>
+  </div>
+
+
+  <!-- Mensaje de error -->
+  <div id="error-message" class="error-message"></div>
+
+  <!-- Script principal -->
+  <script src="Java/PanelUsuario.js"></script>
+</body>
+</html>

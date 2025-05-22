@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         this.classList.toggle('fa-eye-slash');
     });
     
-    
     loginForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -23,14 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData(loginForm);
         
         // Enviar la solicitud al servidor
-        fetch('Php/login.php', {
+        fetch('Php/loginUsuario.php', {
             method: 'POST',
             body: formData
         })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                // Redirigir al panel correspondiente
+                // Redirigir al panel de usuario
                 window.location.href = data.redirect;
             } else {
                 // Mostrar mensaje de error
@@ -62,4 +61,5 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
 });
